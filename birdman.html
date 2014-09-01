@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+
+		<!-- JQuery, backbone, underscore -->
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+		<script src="underscore.js" ></script>
+		<script src="backbone.js" ></script>
+		<!-- birdman js -->
+		<script src="birdman.js" ></script>
+		<link rel="stylesheet" href="birdman.css">
+		<meta name="viewport" content="width=device-width, user-scalable=no">
+	</head>
+
+	<body>
+		<!-- bootstrap center content. -->
+		<div class="header">
+			<h2>Birdman</h2>
+			<input id="query" type="text" placeholder="Search" />
+			<button id="search">Search/Refresh</button> 
+			<span id="loading"><img src="load.gif"/> loading...</span>
+		</div>
+
+		<div id="birdmanapp">
+			<div id="tweet-list"></div>
+		</div>
+
+		<!-- Templates -->
+		<script type="text/template" id="tweet-template">
+			<div class="view" onclick="window.location= 'http://twitter.com/<%- user.screen_name %>/status/<%- id_str %>'">
+				<a href="http://twitter.com/<%- user.screen_name %>"@>
+					<img class="prof" src='<%- user.profile_image_url_https %>' /> 
+				</a>
+				<strong class="uname"><a href="http://twitter.com/<%- user.screen_name %>"@><%- user.name  %></a></strong>
+				<span class="sname"><a href="http://twitter.com/<%- user.screen_name %>"@>@<%- user.screen_name  %></a>
+					 - <%- formatCreateDate(created_at) %>
+				</span>
+				<p><%= text %></p>
+			</div>
+			</a>
+		</script>
+
+	</body>
+</html>

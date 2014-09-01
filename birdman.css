@@ -1,0 +1,55 @@
+html, body {
+	font-family: Arial,sans-serif;
+}
+
+img.prof {
+	float: left;
+	margin: 3px 10px 10px 10px;
+	border-radius: 5px;
+	/*padding: 10px;*/
+}
+
+.view {
+	border-bottom: 1px solid rgb(225, 232, 237);
+}
+
+.view:hover {
+	background-color: rgb(245, 248, 250);
+}
+
+.view p {
+	white-space: pre-wrap;
+	margin-left: 70px;
+}
+
+.header {
+	text-align: center;
+}
+
+.header h2 {
+	float: left;
+	margin: 0;
+}
+
+#birdmanapp {
+	clear: both;
+}
+
+a {
+	color: #2b7bb9;
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+.view .sname, .view .sname a {
+	color: #8899a6;
+}
+
+.view .uname a {
+	font-weight: bold;
+	color: #292f33;
+}
+
