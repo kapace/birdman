@@ -91,7 +91,14 @@ $(function(){
 				$('#loading').html(this.loading_template())
 						.fadeTo( 1000, 0 ); // make element invisible, but don't apply display:none
 			}
-
+			
+			// Filter out retweets if option is not checked.
+			if (!$("#rtc").prop('checked')) {
+				resp.statuses = _.filter(resp.statuses, function (tweet) {
+					return tweet.retweet_status == undefined;
+				})
+			}
+					
 			this.url = this.queryHost + resp.search_metadata.refresh_url;
 			resp.statuses.reverse(); // reverse statuses array to push newest tweets to the top.
 
