@@ -78,12 +78,19 @@ $(function(){
 		url : "",
 
 		initialize: function(model, option) {
-			this.queryHost = "http://netlift.ca/birdman/birdman-proxy.php"
+			this.queryHost = "http://netlift.ca/birdman/birdman-proxy.php";
+			this.loading_template = _.template($("#load-template").html());
 		},
 
 		parse: function (resp, xhr) {
 			// Don't attempt to parse if the call returned an error.
-			if (resp.errors != undefined) return;
+			if (resp.errors != undefined) {
+				$('#loading').text("Error occurred searching twitter.");
+				return;
+			} else {
+				$('#loading').html(this.loading_template())
+						.fadeTo( 1000, 0 ); // make element invisible, but don't apply display:none
+			}
 
 			this.url = this.queryHost + resp.search_metadata.refresh_url;
 			resp.statuses.reverse(); // reverse statuses array to push newest tweets to the top.
@@ -108,10 +115,6 @@ $(function(){
 			}
 
 			this.fetch({ reset: (lastquery != val),
-				success: function (collection, response, options) {
-					//$('#loading').html("loading... " + response.statuses.length + " tweets")
-					$('#loading').fadeTo( 1000, 0 ); // make element invisible, but don't apply display:none
-				},
 				error :  function (collection, response, options) {
 					$('#loading').text("Error occurred searching twitter.");
 				}

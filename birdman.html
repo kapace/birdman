@@ -26,7 +26,7 @@
 			<div id="tweet-list"></div>
 		</div>
 
-		<!-- Templates -->
+		<!-- Templates: tweet view, loading gif -->
 		<script type="text/template" id="tweet-template">
 			<div class="view" onclick="window.location= 'http://twitter.com/<%- user.screen_name %>/status/<%- id_str %>'">
 				<a href="http://twitter.com/<%- user.screen_name %>"@>
@@ -39,6 +39,10 @@
 				<p><%= text %></p>
 			</div>
 			</a>
+		</script>
+		
+		<script type="text/template" id="load-template">
+			<img src="load.gif"/> loading...
 		</script>
 
 	</body>
