@@ -3,10 +3,10 @@
 // implements https://dev.twitter.com/docs/auth/authorizing-request
 
 // Tokens, keys, secrets and URLs
-$oauth_access_token = '522908689-s4N7o3KNMIIrRZsBg6gOLSpnmEaZ6zoXhojKvJqx';
-$oauth_access_token_secret = 'cYHlEo7k6EmmiFl8w8X7VXeL8MOd4jyK0197ECulY8ZWj';
-$app_key = 'DD3CUH03wtuBX4HwCZS0FKxl4';
-$app_secret = 'QL30fh2ljo77T1PhTViY46miWA1VqZ79McvUH8lfa6phS7Zxv8';
+$oauth_access_token = '';
+$oauth_access_token_secret = '';
+$app_key = '';
+$app_secret = '';
 $api_base_url = 'https://api.twitter.com/1.1/';
 
 $oauth = array(
