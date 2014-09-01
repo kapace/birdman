@@ -116,7 +116,7 @@ $(function(){
 			
 			// If the last query has changed, or if the url hasn't been set yet: set the url.
 			if ( lastquery != val || this.url == "") {
-				this.url = this.queryHost + "?q=" + val;
+				this.url = this.queryHost + "?q=" + encodeURIComponent(val);
 
 				localStorage.setItem("lastquery", val);
 			}
