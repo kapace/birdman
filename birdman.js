@@ -95,7 +95,7 @@ $(function(){
 			// Filter out retweets if option is not checked.
 			if (!$("#rtc").prop('checked')) {
 				resp.statuses = _.filter(resp.statuses, function (tweet) {
-					return tweet.retweet_status == undefined;
+					return tweet.retweeted_status == undefined;
 				})
 			}
 					
